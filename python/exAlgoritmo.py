@@ -4,13 +4,13 @@
 # texto = 'O rato roeu a roupa do rei de roma'
 
 # a) Escreva um código que imprima a string em letras maiúsculas.
-#print('letras maiusculas: ', texto.upper())
+# print('letras maiusculas: ', texto.upper())
 
 # b) Escreva um código que imprima a string em letras minúsculas.
-#print('letras minusculas: ', texto.lower())
+# print('letras minusculas: ', texto.lower())
 
 # c) Escreva um código que imprima a quantidade de caracteres da string.
-#print('letras maiusculas: ', len(texto), 'caracteres')
+# print('letras maiusculas: ', len(texto), 'caracteres')
 
 # d) Escreva um código que substitua a palavra "rei" por "rainha" na string.
 # print(texto.replace('rei','rainha'))
@@ -63,7 +63,6 @@
 # print(soma/len(produtos))
 
 # d) Escreva um código que encontre o produto mais caro da lista e imprima seu nome e preço.
-
 # maior = max(produtos)
 # print(maior)
 
@@ -123,14 +122,13 @@
 # 1. Considere a seguinte string:
 texto = "Um passarinho me contou que viu um gato de botas tomando um café com um pinguim"
 
-
 # a) Escreva um código que imprima todas as palavras da string em ordem alfabética, sem repetição.
 # frases = [frase for frase in texto.split()]
 # frases.sort()
 # print(frases)
 
 # b) Escreva um código que conte quantas vezes a letra "a" aparece no texto (não diferencia maiúsculas de minúsculas).
-#print(texto.count('a'))
+# print(texto.count('a'))
 
 # c) Escreva um código que imprima todas as palavras do texto em ordem alfabética, com a primeira letra em maiúscula.
 # frases = [frase for frase in texto.split()]
@@ -139,3 +137,67 @@ texto = "Um passarinho me contou que viu um gato de botas tomando um café com u
 # print(string.title())
 
 # d) Escreva um código que imprima todas as palavras do texto em ordem decrescente de tamanho.
+frases = [frase for frase in texto.split()]
+for maiores in frases:
+    maiores += max(frases, key=str)
+    print(maiores)
+
+
+
+# 2 - Explique o resultado do código abaixo:
+
+# lista = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+# soma = sum([num for sublist in lista for num in sublist])
+# print(soma)
+
+# R. No codigo temos uma exemplos de listas dentro de lista, ao todo temos 3 sublista, cada sublista corresponde a uma posição da lista principal, a varivel soma é atribuida a funcao 'SUM' que serve pra somar os elementos, enquanto utiliza o for para percorrer as sublista dentro da lista principal e somas todos os valores contido nas tres sublistas.
+
+
+# 3 - Considere a seguinte tupla:
+
+# tupla = (1, 2, 3, [4, 5, 6])
+# a) Explique o resultado de uma operação que tenta modificar o terceiro elemento da lista dentro da tupla. Ex:
+# tupla[3][0] = 7
+# print(tupla)
+
+# R. A questão ja nos da a resposta da pergunta, temos uma tupla que contem 4 elementos, e o elemento 4 é uma lista que contem 3 elementos. tentamos modificar o elemento 0 da lista, pois lista são mutaveis, mesma ela estando dentro de uma tupla que é imutavel. mas se tentamos mudar os elementos das que estão dentro da tupla o codigo não iria funcionar.
+
+# b) Explique o resultado de uma operação que modifica o terceiro elemento da listadentro da tupla. Ex:
+# tupla[3][0].append(7)
+# print(tupla)
+
+# R. No codigo ocorre um erro pois ao colocar o append que é um metodo para adicionar elementos dentro de lista, o usuario especificou a posicao '[0]' dentro da lista, o que não é necessario, so precisando especificar o lista que neste caso é [3].
+# O codigo correto neste casos seria:
+# tupla[3].append(7)
+# print(tupla)
+
+
+# 4. Considere o seguinte dicionário
+# estoque = {
+#     "produto1": {
+#         "nome": "Camisa",
+#         "preco": 50.0,
+#         "quantidade": 100,
+#         "tamanhos": ["P", "M", "G"]
+#     },
+#     "produto2": {
+#         "nome": "Calça",
+#         "preco": 80.0,
+#         "quantidade": 50,
+#         "tamanhos": ["38", "40", "42", "44"]
+#     },
+#     "produto3": {
+#         "nome": "Tênis",
+#         "preco": 120.0,
+#         "quantidade": 20,
+#         "tamanhos": ["39", "40", "41", "42", "43", "44"]
+#     }
+# }
+# Qual o código Python que pode ser utilizado para obter uma lista com todos os tamanhos disponíveis para todos os produtos no estoque, sem repetições?
+
+# lista1 = estoque["produto1"]['tamanhos']
+# lista2 = estoque["produto2"]['tamanhos']
+# lista3 = estoque["produto3"]['tamanhos']
+# listaTamanho = lista1 + lista2 + lista3
+# print(listaTamanho)
+# print(set(listaTamanho))
