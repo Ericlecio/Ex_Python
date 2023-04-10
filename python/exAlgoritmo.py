@@ -123,24 +123,24 @@
 texto = "Um passarinho me contou que viu um gato de botas tomando um café com um pinguim"
 
 # # a) Escreva um código que imprima todas as palavras da string em ordem alfabética, sem repetição.
-# frases = [frase for frase in texto.split()]
-# frases.sort()
-# print(frases)
+# texto.lower()
+# frases = texto.split()
+# frases1 = sorted(frases)
+# for palavras in frases1:
+#     print(palavras)
+
 
 # # b) Escreva um código que conte quantas vezes a letra "a" aparece no texto (não diferencia maiúsculas de minúsculas).
 # print(texto.count('a'))
 
 # # c) Escreva um código que imprima todas as palavras do texto em ordem alfabética, com a primeira letra em maiúscula.
 # frases = [frase for frase in texto.split()]
-# frases.sort()
 # string = " ".join(frases)
 # print(string.title())
 
 # # d) Escreva um código que imprima todas as palavras do texto em ordem decrescente de tamanho.
 frases = [frase for frase in texto.split()]
-
-palavras = sorted(frases, key=len, reverse=True)  # ordena a lista de palavras por tamanho, em ordem decrescente
-
+palavras = sorted(frases, key=len, reverse=True)
 for palavra in palavras:
     print(palavra)
 
@@ -156,10 +156,10 @@ for palavra in palavras:
 
 # # 3 - Considere a seguinte tupla:
 
-# tupla = (1, 2, 3, [4, 5, 6])
+tupla = (1, 2, 3, [4, 5, 6])
 # # a) Explique o resultado de uma operação que tenta modificar o terceiro elemento da lista dentro da tupla. Ex:
-# tupla[3][0] = 7
-# print(tupla)
+tupla[3][0] = 7
+print(tupla)
 
 # # R. A questão ja nos da a resposta da pergunta, temos uma tupla que contem 4 elementos, e o elemento 4 é uma lista que contem 3 elementos. tentamos modificar o elemento 0 da lista, pois lista são mutaveis, mesma ela estando dentro de uma tupla que é imutavel. mas se tentamos mudar os elementos das que estão dentro da tupla o codigo não iria funcionar.
 
@@ -196,9 +196,9 @@ for palavra in palavras:
 # }
 # # Qual o código Python que pode ser utilizado para obter uma lista com todos os tamanhos disponíveis para todos os produtos no estoque, sem repetições?
 
-# lista1 = estoque["produto1"]['tamanhos']
-# lista2 = estoque["produto2"]['tamanhos']
-# lista3 = estoque["produto3"]['tamanhos']
-# listaTamanho = lista1 + lista2 + lista3
-# print(listaTamanho)
-# print(set(listaTamanho))
+# tamanhos_disponiveis = set() 
+
+# for produto in estoque.values(): 
+#     tamanhos_disponiveis.update(produto["tamanhos"]) 
+
+# print(list(tamanhos_disponiveis))
