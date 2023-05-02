@@ -48,12 +48,20 @@ filmes["Matrix"] = {
 # print(filmes["O Senhor dos Anéis"]['atores'])
 # print(filmes.keys())
 
-a = (1,2,3,4,5)
-b =(3,4,5,6,7)
-c = a+b
-print(set(c))
-print(c[2])
+# a = (1,2,3,4,5)
+# b =(3,4,5,6,7)
+# c = a+b
+# print(set(c))
+# print(c[2])
 
-d = list(b)
-d.sort(reverse=True)
-print(d)
+# d = list(b)
+# d.sort(reverse=True)
+# print(d)
+
+string = 'o rato roeu'
+
+print(string.capitalize())
+
+string1 = ['o', 'rato', 'roeu']
+string2 = (set(string1))
+print(string2)
