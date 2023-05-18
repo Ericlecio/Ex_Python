@@ -1,5 +1,5 @@
 pergunta = int(input(
-    'Escolha o tipo de equação que voce irá Digitar: \n1 - aX+b=c\n2 - b+aX=c\n3 - aX2 + bX + c = 0'))
+    'Escolha o tipo de equação que voce irá Digitar: \n1 - aX+b=c\n2 - b+aX=c\n3 - aX2 + bX + c = 0 \n'))
 
 if (pergunta == 1):
     equacao = input('Digite a equação').replace(' ', '')
