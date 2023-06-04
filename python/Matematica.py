@@ -1,8 +1,11 @@
+import math
+
 pergunta = int(input(
     'Escolha o tipo de equação que voce irá Digitar: \n1 - aX+b=c\n2 - b+aX=c\n3 - aX2 + bX + c = 0 \n'))
 
 if (pergunta == 1):
-    equacao = input('Digite a equação').replace(' ', '')
+    print("="*60)
+    equacao = input('Digite a equação: ').replace(' ', '').lower()
     if (pergunta == 1):
         partes = equacao.split('=')
         c = int(partes[1])
@@ -15,7 +18,8 @@ if (pergunta == 1):
         print('Equação escrita errada!')
 
 elif (pergunta == 2):
-    equacao = input('Digite a equação').replace(' ', '')
+    print("="*60)
+    equacao = input('Digite a equação: ').replace(' ', '').lower()
     if (pergunta == 2):
         partes = equacao.split('=')
         c = int(partes[1])
@@ -28,12 +32,16 @@ elif (pergunta == 2):
         print('Equação escrita errada!')
 
 elif (pergunta == 3):
+    print("="*60)
     a = int(input('Digite o valor de a: '))
     b = int(input('Digite o valor de b: '))
     c = int(input('Digite o valor de c: '))
-    delta = ((b**2) - (4*a*c)) ** (1/2)
-    x1 = (- b + delta)/2
-    x2 = (- b - delta)/2
+    delta = ((b**2) - (4*a*c))
+    raizdelta = math.sqrt(delta)
+    x1 = (- b + raizdelta)/ (2 * a)
+    x2 = (- b - raizdelta)/ (2 * a)
+
+
     print('X1=', x1)
     print('X2=', x2)
 else:
